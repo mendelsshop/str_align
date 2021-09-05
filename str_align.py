@@ -23,7 +23,7 @@ def center_string(string_name, space_length):
     return f'{blank: <{right_pad}}{string_name}{blank: >{left_pad}}'
 
 
-def center_char_string(string_name, space_length,char = None,left_char = None,right_char = None):
+def center_char_string(string_name, space_length,char = None,*,left_char = None,right_char = None):
     card_length = len(string_name)
     if  card_length == space_length:
         return string_name
@@ -53,7 +53,7 @@ def center_char_string(string_name, space_length,char = None,left_char = None,ri
         return f'{left_char}{blank:<{right_pad-1}}{string_name}{blank:>{left_pad}}' 
     else:
         return 'no char found'
-def center_string_string(string_name, space_length,string = None,left_string = None,right_string = None):
+def center_string_string(string_name, space_length,string = None,*,left_string = None,right_string = None):
     card_length = len(string_name)
     if  card_length == space_length:
         return string_name
@@ -96,5 +96,5 @@ if __name__ == '__main__':
     print('print(centered_string)')
     print(f'|{center_string(word_to_extend, extend_length)}|')
     print('note: vertical bar just used to demostrate functality') 
-    z = center_string_string('hi', 11,string=chr(128513))
+    z = center_string_string('hi', 11,'h')
     print(z)
